@@ -1,4 +1,3 @@
-
 import random
 import string
 
@@ -25,9 +24,22 @@ while chars == "":
 
     if chars == "":
         print("Please select at least one character type!")
+while True:
+    password= ""
+    for i in range(n):
+        password += random.choice(chars)
+    print("Your password:", password)
+    
+    while True:
+        
+     choice = input("Another password (y/n): ").lower()
 
-password = ""
-for i in range(n):
-    password += random.choice(chars)
+     if choice == "y":
+          break
 
-print("Your password:", password)
+     elif choice == "n":
+        print("Goodbye")
+        exit()
+
+     else:
+        print("Enter valid choice")
