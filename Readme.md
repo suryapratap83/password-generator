@@ -10,6 +10,7 @@ A command-line password generator built in Python. Choose your password length a
   - Lowercase letters (a-z)
   - Symbols (!@#$...)
   - Generate another password with same settings
+  - Input Validation
 
 ## How to Run
 
