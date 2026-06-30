@@ -11,6 +11,8 @@ A command-line password generator built in Python. Choose your password length a
   - Symbols (!@#$...)
   - Generate another password with same settings
   - Input Validation
+  - Generate another password with a new length each time
+  - Try/except validation for length input
 
 ## How to Run
 
