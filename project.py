@@ -1,37 +1,35 @@
 import random
 import string
 
-chars = ""
+while True:
+    try:
+        n = int(input("Enter password length: "))
+        if n > 0:
+            break
+        print("Length must be greater than 0.")
+    except ValueError:
+        print("Please enter a valid number.")
 
 while True:
+    chars = ""
 
-    if chars == "":
-        while chars == "":
-            digits = input("Include digits? (y/n): ")
-            uppercase = input("Include uppercase? (y/n): ")
-            lowercase = input("Include lowercase? (y/n): ")
-            punctuation = input("Include symbols? (y/n): ")
+    while chars == "":
+        digits = input("Include digits? (y/n): ")
+        uppercase = input("Include uppercase? (y/n): ")
+        lowercase = input("Include lowercase? (y/n): ")
+        punctuation = input("Include symbols? (y/n): ")
 
-            if digits.lower() == "y":
-                chars += string.digits
-            if uppercase.lower() == "y":
-                chars += string.ascii_uppercase
-            if lowercase.lower() == "y":
-                chars += string.ascii_lowercase
-            if punctuation.lower() == "y":
-                chars += string.punctuation
+        if digits.lower() == "y":
+            chars += string.digits
+        if uppercase.lower() == "y":
+            chars += string.ascii_uppercase
+        if lowercase.lower() == "y":
+            chars += string.ascii_lowercase
+        if punctuation.lower() == "y":
+            chars += string.punctuation
 
-            if chars == "":
-                print("Please select at least one character type!")
-
-    while True:
-        try:
-            n = int(input("Enter password length: "))
-            if n > 0:
-                break
-            print("Length must be greater than 0.")
-        except ValueError:
-            print("Please enter a valid number.")
+        if chars == "":
+            print("Please select at least one character type!")
 
     password = ""
 
@@ -41,17 +39,15 @@ while True:
     print("\nGenerated Password:", password)
 
     print("\n1. Generate another password")
-
     print("2. Exit")
 
     while True:
-        choice = input("\nGenerate another password? (1/2): ").lower()
+        choice = input("\nGenerate another password? (1/2): ")
 
         if choice == "1":
-            break     
+            break
         elif choice == "2":
             print("Goodbye!")
             exit()
         else:
-            print("choose proper menu")
-
+            print("Choose a proper menu option.")
