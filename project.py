@@ -2,15 +2,16 @@ import random
 import string
 
 while True:
-    try:
-        n = int(input("Enter password length: "))
-        if n > 0:
-            break
-        print("Length must be greater than 0.")
-    except ValueError:
-        print("Please enter a valid number.")
 
-while True:
+    while True:
+        try:
+            n = int(input("Enter password length: "))
+            if n > 0:
+                break
+            print("Length must be greater than 0.")
+        except ValueError:
+            print("Please enter a valid number.")
+
     chars = ""
 
     while chars == "":
@@ -21,10 +22,13 @@ while True:
 
         if digits.lower() == "y":
             chars += string.digits
+
         if uppercase.lower() == "y":
             chars += string.ascii_uppercase
+
         if lowercase.lower() == "y":
             chars += string.ascii_lowercase
+
         if punctuation.lower() == "y":
             chars += string.punctuation
 
@@ -41,13 +45,16 @@ while True:
     print("\n1. Generate another password")
     print("2. Exit")
 
+    
     while True:
-        choice = input("\nGenerate another password? (1/2): ")
+       choice = input("Your Choice: ")
+       
+       if choice=="1":
+          break
 
-        if choice == "1":
-            break
-        elif choice == "2":
-            print("Goodbye!")
-            exit()
-        else:
-            print("Choose a proper menu option.")
+       elif choice=="2":
+        print("Goodbye")
+        exit()
+
+       else:
+        print("Enter valid choice")
